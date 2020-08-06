@@ -122,8 +122,8 @@ Then, perform inference; you can pass some data as the "Body" of a message, to a
 
 The inference data is stored in the "Body" of the response, and can be retrieved:
 
-  response = response['Body'].read().decode('utf-8')
-  print(response)
+    response = response['Body'].read().decode('utf-8')
+    print(response)
 
 Finally, do not forget to shut down your endpoint when you are done using it.
 
@@ -157,7 +157,7 @@ Now it is time to actually create the Lambda function. Remember from earlier tha
 -- The name of the endpoint, and the vocabulary object.
 -- We will copy these pieces of information to our Lambda function, after we create it.
 
-/code/tutorials/lambdafunction.py
+https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/lambdafunction.py
 
 #### Building an API
 
@@ -177,8 +177,9 @@ Now we get to reap the rewards of all our hard work, we get to deploy our web ap
 
 The back end of our app has been set up so at this point all we need to do is finish up the user facing portion, the website itself. To do this we just need to tell our website where it should send data to.
 
-Don't forget!
-In order for our web app to work, we need to have our model deployed. This means that we are incurring a cost. So, once you have finished playing with your newly created web app, make sure to shut it down!
+https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/index.html
+
+Don't forget! In order for our web app to work, we need to have our model deployed. This means that we are incurring a cost. So, once you have finished playing with your newly created web app, make sure to shut it down!
 
 You may also want to clean up the endpoint that you constructed and the Lambda function. This isn't too important, however, since each of these services only incur a cost when used.
 
