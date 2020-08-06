@@ -154,7 +154,7 @@ Since we want the Lambda function to call a SageMaker endpoint, we need to make 
 
 Now it is time to actually create the Lambda function. Remember from earlier that in order to process the user provided input and send it to our endpoint we need to gather two pieces of information:
 
--- The name of the endpoint, and the vocabulary object.
+-- The name of the endpoint, and the vocabulary object.    
 -- We will copy these pieces of information to our Lambda function, after we create it.
 
 https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/lambdafunction.py
