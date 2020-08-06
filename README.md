@@ -50,8 +50,6 @@ This last step is often called word tokenization or vectorization.
 
 And in the next example, you'll see exactly how I do these processing steps; I'll also be vectorizing words using a method called bag of words. If you'd like to learn more about bag of words, please check out the video below, recorded by another of our instructors, Arpan!
 
-Bag of Words
-
 You can read more about the bag of words model, and its applications, [on this page](https://en.wikipedia.org/wiki/Bag-of-words_model). It's a useful way to represent words based on their frequency of occurrence in a text.
 
 #### Building and Deploying the Model
@@ -74,7 +72,7 @@ As mentioned earlier, there are two obstacles we are going to need to overcome. 
 
 The structure for our web app will look like the diagram below.
 
-!img[Diagram](https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/Web%20App%20Diagram.svg "Simple Web App Data Path")
+!img[Diagram](https://raw.githubusercontent.com/austinlasseter/xgboost-sentiment-analysis/master/code/tutorials/Web%20App%20Diagram.svg "Simple Web App Data Path")
 
 What this means is that when someone uses our web app, the following will occur.
 
@@ -99,24 +97,31 @@ You've just learned a lot about how to use SageMaker to deploy a model and perfo
 
 An endpoint, in this case, is a URL that allows an application and a model to speak to one another.
 
-!img[Diagram](https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/endpoints.png "Endpoints")
+!img[Diagram](https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/endpoints.png?raw=true "Endpoints")
 
 **Endpoint steps**
 You can start an endpoint by calling .deploy() on an estimator and passing in some information about the instance.
-xgb_predictor = xgb.deploy(initial_instance_count = 1, instance_type = 'ml.m4.xlarge')
+
+    xgb_predictor = xgb.deploy(initial_instance_count = 1, instance_type = 'ml.m4.xlarge')
+
 Then, you need to tell your endpoint, what type of data it expects to see as input (like .csv).
+
     from sagemaker.predictor import csv_serializer
 
-xgb_predictor.content_type = 'text/csv'
-xgb_predictor.serializer = csv_serializer
+    xgb_predictor.content_type = 'text/csv'
+    xgb_predictor.serializer = csv_serializer
+
 Then, perform inference; you can pass some data as the "Body" of a message, to an endpoint and get a response back!
-response = runtime.invoke_endpoint(EndpointName = xgb_predictor.endpoint,   # The name of the endpoint we created
-                                       ContentType = 'text/csv',                     # The data format that is expected
-                                       Body = ','.join([str(val) for val in test_bow]).encode('utf-8'))
+
+    response = runtime.invoke_endpoint(EndpointName = xgb_predictor.endpoint,   # The name of the endpoint we created
+                                               ContentType = 'text/csv',                     # The data format that is expected
+                                               Body = ','.join([str(val) for val in test_bow]).encode('utf-8'))
+
 The inference data is stored in the "Body" of the response, and can be retrieved:
 
-response = response['Body'].read().decode('utf-8')
-print(response)
+  response = response['Body'].read().decode('utf-8')
+  print(response)
+
 Finally, do not forget to shut down your endpoint when you are done using it.
 
     xgb_predictor.delete_endpoint()
