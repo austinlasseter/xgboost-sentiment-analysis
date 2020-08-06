@@ -157,7 +157,7 @@ Now it is time to actually create the Lambda function. Remember from earlier tha
 -- The name of the endpoint, and the vocabulary object.    
 -- We will copy these pieces of information to our Lambda function, after we create it.
 
-https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/lambdafunction.py
+https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/Tutorials/lambdafunction.py
 
 #### Building an API
 
@@ -177,7 +177,7 @@ Now we get to reap the rewards of all our hard work, we get to deploy our web ap
 
 The back end of our app has been set up so at this point all we need to do is finish up the user facing portion, the website itself. To do this we just need to tell our website where it should send data to.
 
-https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/index.html
+https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/Tutorials/index.html
 
 Don't forget! In order for our web app to work, we need to have our model deployed. This means that we are incurring a cost. So, once you have finished playing with your newly created web app, make sure to shut it down!
 
