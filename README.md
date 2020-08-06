@@ -72,7 +72,7 @@ As mentioned earlier, there are two obstacles we are going to need to overcome. 
 
 The structure for our web app will look like the diagram below.
 
-!img[Diagram](diagram.svg "Simple Web App Data Path")
+<img src="./diagram.svg">
 
 What this means is that when someone uses our web app, the following will occur.
 
@@ -97,7 +97,8 @@ You've just learned a lot about how to use SageMaker to deploy a model and perfo
 
 An endpoint, in this case, is a URL that allows an application and a model to speak to one another.
 
-!img[Diagram](endpoints.png "Endpoints")
+<img src="./endpoints.png">
+
 
 **Endpoint steps**
 You can start an endpoint by calling .deploy() on an estimator and passing in some information about the instance.
