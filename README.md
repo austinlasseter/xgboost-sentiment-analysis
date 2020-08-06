@@ -1,5 +1,7 @@
-# xgboost-sentiment-analysis
-Predicting sentiment using SageMaker XGBoost on IMDB movie reviews dataset
+# Predicting sentiment using SageMaker XGBoost on IMDB movie reviews dataset
+Materials are from Udacity Machine Learning Engineer Nanodegree Program
+https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t
+
 
 ## Mini-Project: Building Your First Model
 
@@ -72,7 +74,8 @@ As mentioned earlier, there are two obstacles we are going to need to overcome. 
 
 The structure for our web app will look like the diagram below.
 
-!img[Diagram](code/tutorials/Web App Diagram.svg "Simple Web App Data Path")
+!img[Diagram](https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/Web%20App%20Diagram.svg "Simple Web App Data Path")
+
 What this means is that when someone uses our web app, the following will occur.
 
 To begin with, a user will type out a review and enter it into our web app.
@@ -96,7 +99,7 @@ You've just learned a lot about how to use SageMaker to deploy a model and perfo
 
 An endpoint, in this case, is a URL that allows an application and a model to speak to one another.
 
-!img[Diagram](code/tutorials/endpoints.png "Endpoints")
+!img[Diagram](https://github.com/austinlasseter/xgboost-sentiment-analysis/blob/master/code/tutorials/endpoints.png "Endpoints")
 
 **Endpoint steps**
 You can start an endpoint by calling .deploy() on an estimator and passing in some information about the instance.
